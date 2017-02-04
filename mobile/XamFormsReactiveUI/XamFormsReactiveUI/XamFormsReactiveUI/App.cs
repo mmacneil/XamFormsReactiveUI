@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿ 
 
+using Autofac;
 using Xamarin.Forms;
+using XamFormsReactiveUI.Bootstrap;
 
 namespace XamFormsReactiveUI
 {
     public class App : Application
     {
+        public static IContainer Container { get; set; }
+
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "XamFormsReactiveUI",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-
-            MainPage = new NavigationPage(content);
+            var bootstrapper = new Bootstrapper(this);
+            Container = bootstrapper.Run();
         }
 
         protected override void OnStart()
