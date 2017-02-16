@@ -8,6 +8,6 @@ namespace XamFormsReactiveUI.DataLayer.Abstract
 {
     public interface IWordRepository : IEntityBaseRepository<Word>
     {
-        Task<IList<Word>> GetWords();
+        Task<IList<Word>> GetWords(int floor, int ceiling);
     }
 }

@@ -24,6 +24,7 @@ namespace XamFormsReactiveUI.Bootstrap
         protected override void RegisterPages(IPageFactory pageFactory)
         {
             pageFactory.Register<BeginViewModel, BeginPage>();
+            pageFactory.Register<WordPickViewModel, WordPickPage>();
         }
 
         protected override void ConfigureApplication(IContainer container)

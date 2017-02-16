@@ -5,7 +5,21 @@
              xmlns:forms="http://xamarin.com/schemas/2014/forms"
              xmlns:viewModels="clr-namespace:XamFormsReactiveUI.ViewModels;assembly=XamFormsReactiveUI"
              x:Class="XamFormsReactiveUI.Pages.BeginPage">
-  <forms:StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-    <forms:ActivityIndicator IsRunning="True" />
+  <forms:StackLayout Spacing="26" VerticalOptions="Center" HorizontalOptions="Center">
+    <!--<forms:ActivityIndicator IsRunning="True" />-->
+    
+    <forms:Label Text="Word Up!" FontSize="44">
+      <forms:Label.FontFamily>
+        <forms:OnPlatform x:TypeArguments="x:String">
+          <forms:OnPlatform.iOS></forms:OnPlatform.iOS>
+          <forms:OnPlatform.Android>LobsterTwo-Bold.ttf#LobsterTwo-Bold</forms:OnPlatform.Android>
+          <forms:OnPlatform.WinPhone></forms:OnPlatform.WinPhone>
+          </forms:OnPlatform>
+       </forms:Label.FontFamily>
+      </forms:Label>
+    <forms:Label Text="XF/RxUI demo" FontSize="20" HorizontalTextAlignment="Center" />
+    <forms:Button Text="Begin" FontSize="24" Command="{forms:Binding LaunchCommand}"  />
+    
   </forms:StackLayout>
+
 </xamForms:ReactiveContentPage>

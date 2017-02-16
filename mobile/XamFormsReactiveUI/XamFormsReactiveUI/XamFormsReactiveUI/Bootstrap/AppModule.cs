@@ -17,9 +17,11 @@ namespace XamFormsReactiveUI.Bootstrap
         {
             // viewmodels...
             builder.RegisterType<BeginViewModel>().SingleInstance();
+            builder.RegisterType<WordPickViewModel>().SingleInstance();
 
             // pages...
             builder.RegisterType<BeginPage>().SingleInstance();
+            builder.RegisterType<WordPickPage>().SingleInstance();
 
             // app instance
             builder.RegisterInstance(Application.Current).SingleInstance();

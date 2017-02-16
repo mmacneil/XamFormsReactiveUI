@@ -48,6 +48,7 @@
     <Compile Include="DataLayer\EntityBaseRepository.cs" />
     <Compile Include="DataLayer\IAppDatabase.cs" />
     <Compile Include="DataLayer\WordRepository.cs" />
+    <Compile Include="Extensions\IObservableExtensions.cs" />
     <Compile Include="Factories\IPageFactory.cs" />
     <Compile Include="Factories\PageFactory.cs" />
     <Compile Include="Helpers\AsyncSemaphore.cs" />
@@ -58,15 +59,25 @@
     </Compile>
     <Compile Include="Pages\IPage.cs" />
     <Compile Include="Pages\PageProxy.cs" />
+    <Compile Include="Pages\WordPickPage.xaml.cs">
+      <DependentUpon>WordPickPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataLayer\ISQLite.cs" />
     <Compile Include="Services\App\DialogService.cs" />
     <Compile Include="Services\App\IDialogProvider.cs" />
     <Compile Include="Services\App\INavigator.cs" />
     <Compile Include="Services\App\Navigator.cs" />
+    <Compile Include="ValueConverters\BadgeVisibleValueConverter.cs" />
+    <Compile Include="ValueConverters\BadgeWidthConverter.cs" />
+    <Compile Include="ValueConverters\CheckVisibleValueConverter.cs" />
     <Compile Include="ViewModels\BeginViewModel.cs" />
     <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\WordPickViewModel.cs" />
+    <Compile Include="Views\Badge.cs" />
+    <Compile Include="Views\CommandableListView.cs" />
+    <Compile Include="Views\RoundedBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -74,6 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\BeginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\WordPickPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

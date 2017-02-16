@@ -1,18 +1,19 @@
 ﻿ 
-using XamFormsReactiveUI.DataLayer.Abstract;
-using XamFormsReactiveUI.Factories;
+using System.Windows.Input;
+using Xamarin.Forms;
+using XamFormsReactiveUI.Services.App;
 
 namespace XamFormsReactiveUI.ViewModels
 {
     public class BeginViewModel : ViewModel
     {
-        private readonly IPageFactory _pageFactory;
-        private readonly IWordRepository _wordRepository;
-        
-        public BeginViewModel(IPageFactory pageFactory, IWordRepository wordRepository)
+        private readonly INavigator _navigator;
+        public ICommand LaunchCommand { get; }
+
+        public BeginViewModel(INavigator navigator)
         {
-            _pageFactory = pageFactory;
-            _wordRepository = wordRepository;
+            _navigator = navigator;
+            LaunchCommand = new Command(async () => await _navigator.PushModalAsync<WordPickViewModel>(null, true));
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿ 
 
+using Xamarin.Forms;
+
 namespace XamFormsReactiveUI.Pages
 {
     public partial class BeginPage  
@@ -7,6 +9,7 @@ namespace XamFormsReactiveUI.Pages
         public BeginPage()
         {
             InitializeComponent();
+            BackgroundColor = Color.White;
         }
     }
 }
